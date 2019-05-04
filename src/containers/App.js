@@ -1,13 +1,13 @@
 import React,{ Component } from 'react';
-import './App.css';
-import Person from './Person/Person'
+import classes from './App.css';
+import Person from '../components/Persons/Person/Person'
 
 class App extends Component{
   state = {
     persons:[
       {id:"az", name:'az', age: 36},
       {id:"mk", name:'mmk', age: 9},
-      {id:"ft", name:'fatoumata', age: 32},
+      {id:"ft", name:'faguo', age: 32},
     ],
     showPersons:false
   }
@@ -44,14 +44,7 @@ class App extends Component{
 
   render(){
 
-    const style = {
-      backgroundColor: 'green',
-      color:'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-    }
+    let btnClass = ''
 
     let persons = null
     if(this.state.showPersons){
@@ -67,24 +60,24 @@ class App extends Component{
           })}
         </div> 
       )
-      style.backgroundColor = 'red'
+      btnClass = classes.red
     }
 
-    let classes = []
+    let assignedClasses = []
     if(this.state.persons.length <= 2){
-      classes.push('red') // classes = ['red]
+      assignedClasses.push( classes.red ) // classes = ['red]
     }
     if(this.state.persons.length <= 1)
-    classes.push('bold') // classes = ['red', 'bold']
+    assignedClasses.push( classes.bold ) // classes = ['red', 'bold']
 
     return (
      
-        <div className="App">
+        <div className={classes.App}>
             <h1>hey i'm react!</h1>
-            <p className={classes.join(' ')}>let's finaly try to see!!!</p>
+            <p className={assignedClasses.join(' ')}>let's finaly try to see!!!</p>
 
             <button 
-            style={style}
+            className={btnClass}
             onClick={this.togglePresonHandler}>Toggle person</button>
             {persons}
         </div>
