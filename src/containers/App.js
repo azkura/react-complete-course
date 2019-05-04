@@ -23,6 +23,10 @@ class App extends Component{
     return state
   }
 
+  componentDidMount(){
+    console.log('[App.js] componentDidMount')
+  }
+
   deletePersonHandler = (personIndex) => {
     //const persons = this.state.persons.slice()
     const persons = [...this.state.persons]
