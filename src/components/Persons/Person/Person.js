@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classes from './Person.css'
+//import classes from './Person.css'
 import Aux from '../../../hoc/Aux'
 
 class Person extends Component {
@@ -7,7 +7,6 @@ class Person extends Component {
         console.log('[Person.js] rendering...')
         return(
             <Aux>
-                <div className={classes.Person}>
                     <p onClick={this.props.click}>
                         i'am {this.props.name} and i have {this.props.age} years old
                     </p>
@@ -16,7 +15,6 @@ class Person extends Component {
                     onChange={this.props.changed} 
                     value={this.props.name} 
                     />
-                </div>
             </Aux> 
         )
     }
